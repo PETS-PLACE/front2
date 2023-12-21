@@ -1,4 +1,4 @@
-container {
+.container {
   flex: 1;
   backgroundColor: '#FFF';
   shadowOffset { width: 6, height: 10 }
@@ -10,12 +10,12 @@ container {
   alignItems: 'center';
   filter: "drop-shadow(2px 4px 17.299999237060547px rgba(0, 0, 0, 0.25))";
 }
-subcontainer {
+.subcontainer {
   alignItems: "center";
   justifyContent: "center";
   gap: 19;
 }
-quadrado {
+.quadrado {
   width: 384;
   height: 112;
   backgroundColor: "#EBEFEF";
@@ -28,7 +28,7 @@ quadrado {
   fill: "#EBEFEF";
   filter: "drop-shadow(2px 4px 17.299999237060547px rgba(0, 0, 0, 0.25))";
 }
-nome {
+.nome {
   alignSelf: "center";
   textAlign: "center";
   fontSize: 25;

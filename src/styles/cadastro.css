@@ -1,11 +1,11 @@
-conatainer {
+.conatainer {
   flex: 1;
   alignItems: "center";
   justifyContent:'center';
   backgroundColor: '#EBEFEF';
 }
 
-form {
+.form {
   display: 'flex';
   width: '80%';
   height: '80%';
@@ -20,7 +20,7 @@ form {
   }
 }
 
-formTitle {
+.formTitle {
   display: 'flex';
   justifyContent:'center';
   height: '15%';
@@ -35,32 +35,32 @@ formTitle {
   }
 }
 
-keyboardpress {
+.keyboardpress {
   fontSize: 20;
   fontWeight: "700";
   color: '#EBEFEF';
 }
 
-title {
+.title {
   fontSize: 30;
   fontWeight: "700";
   color: '#EBEFEF';
 }
 
-formBody {
+.formBody {
   padding: 15;
   maxHeight: 700;
   overflowY: 'scroll';
 }
 
-label {
+.label {
   fontSize:18;
   color: '#2B324C';
   marginTop: 30;
   marginBottom: 5
 }
 
-input {
+.input {
   height: 50;
   backgroundColor: '#EBEFEF';
   padding: 10;
@@ -68,7 +68,7 @@ input {
   borderRadius: 5;
 }
 
-inputPass {
+.inputPass {
   height: 50;
   backgroundColor: '#EBEFEF';
   padding: 10;
@@ -78,7 +78,7 @@ inputPass {
   width:'85%';
 }
 
-icon {
+.icon {
   width: '15%';
   display:'flex';
   alignItems:'center';
@@ -88,12 +88,12 @@ icon {
   borderBottomRightRadius:10
 }
 
-PassArea {
+.PassArea {
   display:'flex';
   flexDirection:'row';
 }
 
-submit {
+.submit {
   marginRight: "auto";
   marginLeft: "auto";
   marginBottom: 20;
@@ -110,7 +110,7 @@ submit {
   alignItems: 'center';
 }
 
-back {
+.back {
   marginRight: "auto";
   marginLeft: "auto";
   marginBottom: 20;
@@ -126,17 +126,17 @@ back {
   backgroundColor: '#D2DBFF'
 }
 
-backButton {
+.backButton {
   color: '#536CD5';
   fontWeight: '700';
 }
 
-button {
+.button {
   color: 'white';
   fontWeight: '700';
 }
 
-cadastro {
+.cadastro {
   color: '#536CD5';
   fontWeight: '700';
   cursor: 'pointer';
