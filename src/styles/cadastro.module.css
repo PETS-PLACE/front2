@@ -1,0 +1,142 @@
+.main{
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 1px #c5c5c5;
+    max-width: 30rem;
+    background-color: white;
+}
+
+.headForm{
+    background-color: #607FFF;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    height: 20%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.form{
+    padding: 1rem;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.label{
+    width: 100%;
+    color: #2B324C;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    -webkit-margin-top-collapse: collapse;
+}
+
+.input{
+    width: 100%;
+    background-color: #EBEFEF;
+    border: none;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 1rem;
+    color: #2B324C;
+    outline: none;
+}
+
+.span{
+    color: red;
+    font-size: 0.9rem;
+}
+
+.divPassword{
+    background-color: #EBEFEF;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+}
+
+.inputPassword{
+    width: 90%;
+    background-color: #EBEFEF;
+    border: none;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 1rem;
+    color: #2B324C;
+    outline: none;
+}
+
+.divIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    color: #8d8d8d;
+}
+
+.btn{
+    background-color: #607FFF;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: 10rem;
+    cursor: pointer;
+    margin: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.btn:hover{
+    background-color: #5672e2;
+}
+
+.btnVoltar{
+    background-color: #D2DBFF;
+    color: #607FFF;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: 10rem;
+    cursor: pointer;
+    margin: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.btnVoltar:hover{
+    background-color: #c4cdee;
+}
+
+@media (max-width: 480px) {
+    .formContainer{
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .headForm{
+        border-radius: 0;
+    }
+}

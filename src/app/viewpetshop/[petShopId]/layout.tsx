@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css'
-import Script from 'next/script';
+import Header from '@/components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body  style={{overflowX: 'hidden', height: "100vh"}}>
+      <body  style={{overflow: 'hidden', height: "100vh", backgroundColor: '#EBEFEF'}}>
+        <Header/>
         {children}
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js" />
       </body>
     </html>
   )
