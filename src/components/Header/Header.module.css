@@ -5,6 +5,7 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
 }
 
 .divLogo{
@@ -71,6 +72,7 @@
 
 .a:hover{
     background-color: #5672e2;
+    border-radius: 15px;
 }
 
 .aEntrar{
@@ -88,6 +90,7 @@
 
 .aEntrar:hover{
     background-color: #5672e2;
+    border-radius: 15px;
 }
 
 .divButton{
