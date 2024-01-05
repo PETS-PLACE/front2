@@ -1,6 +1,6 @@
 .main{
     background-color: white;
-    height: calc(100% - 55px);
+    height: calc(100%);
 }
 
 .divFilters{
@@ -57,7 +57,6 @@
     background-color: #EBEFEF;
     font-weight: 600;
     cursor: pointer;
-    width: 9.5rem;
 }
 
 .selects:focus{
@@ -78,6 +77,17 @@
     border-radius: 5px;
     box-shadow: 3px 3px 6px 3px #d5d7df;
     padding: 1rem;
+}
+
+.cardEmpty{
+    width: 25rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px 3px #d5d7df;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card:hover{
