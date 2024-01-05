@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styles from '@/styles/viewpetshop.module.css'
 import { Icon } from "@iconify/react";
 import Link from "next/link";
@@ -23,40 +23,63 @@ const createServiceFormSchema = z.object({
 
 type CreateServiceFormData = z.infer<typeof createServiceFormSchema>
 
-export default function viwePetShop({ params }: { params: { typeAccount: string } }) {
+export default function viwePetShop({ params }: { params: { petShopId: string } }) {
 
+    const [services, setServices] = useState([])
+    let [petShop, setPetShop] = useState<any>({})
     const {register, handleSubmit, formState: {errors}} = useForm<CreateServiceFormData>({
         resolver: zodResolver(createServiceFormSchema)
     })
+
+    const finOnePetShop = async () => {
+        const response = await useApi('get', `petshop/${params.petShopId}`)
+
+        if(response.status == 200){
+            setPetShop(response.result[0])  
+        }
+    }
+
+    const findAllServices = async () => {
+        const response = await useApi('get', 'services')
+    
+        if(response.status == 200){
+          setServices(response.result)
+        }
+      }
 
     const createService = async () => {
 
     }
 
+    useEffect(() => {
+        finOnePetShop()
+        findAllServices()
+    }, [])
+
     return (
         <main className={styles.main}>
             <div className={styles.container}>
-                <h1 className={styles.h1}>Pet Shop 1</h1>
+                <h1 className={styles.h1}>{petShop.nome}</h1>
 
                 <div className="row">
                     <div className="col-6 col-sm-6 col-md-3">
                         <h4>Cidade</h4>
-                        <p>Currais Novos</p>
+                        <p>{petShop.cidade}</p>
                     </div>
 
                     <div className="col-6 col-sm-6 col-md-3">
                         <h4>Estado</h4>
-                        <p>Rio Grande Do Norte</p>
+                        <p>{petShop.estado}</p>
                     </div>
 
                     <div className="col-6 col-sm-6 col-md-3">
                         <h4>Bairro</h4>
-                        <p>Nome do bairro</p>
+                        <p>{petShop.bairro}</p>
                     </div>
 
                     <div className="col-6 col-sm-6 col-md-3">
                         <h4>Rua</h4>
-                        <p>Nome da rua - Nº254 </p>
+                        <p>{petShop.rua} - Nº{petShop.numero} </p>
                     </div>
                 </div>
 
@@ -98,9 +121,12 @@ export default function viwePetShop({ params }: { params: { typeAccount: string 
                         <label className={styles.label} htmlFor="serviço">Selecionar Serviço</label>
                         {/* <input className={styles.input} type="text" placeholder="Informe seu nome" {...register('nome')} /> */}
                         <select className={styles.input}>
+                            {
+                                services.map((service:any) => 
+                                <option value={service.id}>{service.name}</option>
+                                )
+                            }
                             <option value="1">Serviço 1</option>
-                            <option value="2">Serviço 2</option>
-                            <option value="3">Serviço 3</option>
                         </select>
                         {errors.nome && <span className={styles.span}>{errors.nome.message}</span>}
 

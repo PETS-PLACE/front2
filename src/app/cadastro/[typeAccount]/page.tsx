@@ -69,7 +69,7 @@ export default function Cadastro({params}: {params: {typeAccount: string}}){
         }
 
         else{
-            const response = await useApi('post', 'clients', {
+            const response = await useApi('post', 'petshop', {
                 nome: dados.nome,
                 cnpj: dados.cnpj,
                 rua: dados.rua,
