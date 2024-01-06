@@ -1,0 +1,68 @@
+.main
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: .3rem;
+}
+.cardTitle
+{
+    height: 20%;
+    font-size: 1.3rem;
+    font-style: bold;
+    font-weight: 700;
+}
+
+.valueT
+{
+    opacity: 0.5;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.value
+{
+    font-weight: 700;
+    font-style: bold;
+}
+
+.edit
+{
+    justify-content: center;
+    color: white;
+    background-color: #607FFF;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    border-radius: 10px; 
+}
+
+.ddServiceDiv
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.addService
+{
+    justify-content: center;
+    color: white;
+    background-color: #607FFF;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.delete
+{
+    justify-content: center;
+    border: 2px solid #607FFF;
+    color: #607FFF;
+    font-weight: 600;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+    border-radius: 10px;
+}
+
+.cardP{
+    opacity: 0.7;
+}

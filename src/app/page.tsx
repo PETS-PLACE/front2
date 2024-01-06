@@ -101,7 +101,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p>Currais Novos</p>
+            <p>Currais Novos - RN</p>
           </div>
 
           <div className={styles.card} onClick={() => router.push('/viewpetshop/1')}>
@@ -115,7 +115,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p>Currais Novos</p>
+            <p>Currais Novos - RN</p>
           </div>
 
           <div className={styles.card} onClick={() => router.push('/viewpetshop/1')}>
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p>Currais Novos</p>
+            <p>Currais Novos - RN</p>
           </div>
         </div>
       </main>

@@ -75,7 +75,7 @@
 .card{
     width: 25rem;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 3px 3px 6px 3px #d5d7df;
     padding: 1rem;
 }
@@ -83,6 +83,13 @@
 .card:hover{
     border: 2px solid #607FFF;
     cursor: pointer;
+    transition: .3s;
+}
+
+.card:not(.card:hover){
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .cardTitle{
