@@ -3,13 +3,12 @@ import { redirect } from 'next/navigation'
 export default function isAuthenticated(requiredRoute:string){
 
   //Rotas que o usuário do tipo client vai ter acesso
-  const clientRoutes = ['cliente', 'viewpetshop']
+  const clientRoutes = ['/cliente', '/userPets']
   //Rota que o usuário do tipo petshop vai ter acesso
-  const petshopRoutes = ['petshop']
+  const petshopRoutes = ['']
 
   // Obtenha o useAuth do localStorage
   const useAuth = JSON.parse(localStorage.getItem('userAuth') as string);
-  
   
   // Verifique se o useAuth está presente e válido
   if (useAuth) {

@@ -17,10 +17,7 @@ export default function Header() {
     const [windowWidth, setWindowWidth] = useState<number>()
     let menuItems: menu[] = []
     const userAuth = JSON.parse(localStorage.getItem('userAuth') as string)
-    const router = useRouter()
-
-    console.log(userAuth);
-    
+    const router = useRouter()  
 
     //Todos os item que estarão no menu
     if(userAuth && userAuth.tipo == 'client'){
@@ -32,6 +29,10 @@ export default function Header() {
             {
                 name: 'Agendamentos',
                 href: ''
+            },
+            {
+                name: 'Meus Pets',
+                href: '/userPets'
             }
         ]
     }
