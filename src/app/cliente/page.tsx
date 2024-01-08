@@ -2,15 +2,15 @@
 import  isAuthenticated  from "@/auth"
 import { useEffect } from "react";
 
-export default function Painel() {
+export default function Cliente() {
 
   useEffect(() => {
-    isAuthenticated('/painel')
+    isAuthenticated('/cliente')
   },[])
 
   return (
     <main>
-      <h1> Painel </h1>
+      <h1> Rota de cliente </h1>
     </main>
   )
 }

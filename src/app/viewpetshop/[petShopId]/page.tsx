@@ -126,7 +126,7 @@ export default function viwePetShop({ params }: { params: { petShopId: string } 
                                 <option value={service.id}>{service.name}</option>
                                 )
                             }
-                            <option value="1">Serviço 1</option>
+                            <option value="0">Nenhum selecionado</option>
                         </select>
                         {errors.nome && <span className={styles.span}>{errors.nome.message}</span>}
 

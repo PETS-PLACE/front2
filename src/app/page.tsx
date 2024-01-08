@@ -17,7 +17,7 @@ export default function Home() {
   //Buscando todos os petshops
   const findPetShops = async (queryString?:any) => {
     setLoading(true) 
-    const response = await useApi('get', `petshop/?${queryString ? queryString : ''}`)
+    const response = await useApi('get', `petshop/${queryString ? '?' + queryString : ''}`)
 
     if(response.status == 200){
       setPetShops(response.result) 
@@ -43,9 +43,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    findPetShops()
-    findAllUfs()
-    findAllServices()
+      findPetShops()
+      findAllUfs()
+      findAllServices()
   }, [])
 
   return (

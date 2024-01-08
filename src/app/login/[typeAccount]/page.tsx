@@ -3,9 +3,39 @@ import React, { useState } from "react"
 import styles from '@/styles/login.module.css'
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Login({params}: {params: {typeAccount: string}}){
     const [showPass, setShowPass] = useState(false)
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const router = useRouter()
+
+    const login = async () => {
+        
+        const response = await axios.create({
+            baseURL: "http://localhost:8080/",
+        }).request({
+            method: 'post',
+            url: 'autenticacao',
+            data: {
+                email,
+                senha,
+                tipo: params.typeAccount == 'cliente' ? 'client' : 'petshop'
+            }
+        })
+
+        if(response){
+
+            if(response.data.result.token){
+                
+                localStorage.setItem('userAuth', JSON.stringify(response.data.result))
+                router.push(`/`)
+            }
+            
+        }
+    }
     
     return(
         <main className={styles.main}>
@@ -16,11 +46,21 @@ export default function Login({params}: {params: {typeAccount: string}}){
 
                 <form className={styles.form}>
                     <label className={styles.label} htmlFor="email">Email</label>
-                    <input className={styles.input} type="text" name="email" placeholder="Informe seu email"/>
+                    <input 
+                        className={styles.input} 
+                        type="text" name="email" 
+                        placeholder="Informe seu email"
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
 
                     <label className={styles.label} htmlFor="password">Senha</label>
                     <div className={styles.divPassword}>
-                        <input className={styles.inputPassword} type={showPass ? 'text' : 'password'} name="password" placeholder="Digite sua senha"/>
+                        <input 
+                            className={styles.inputPassword} type={showPass ? 'text' : 'password'} 
+                            name="password" 
+                            placeholder="Digite sua senha"
+                            onChange={(e) => setSenha(e.target.value)}
+                        />
 
                         <div className={styles.divIcon}>
                             <Icon 
@@ -33,7 +73,12 @@ export default function Login({params}: {params: {typeAccount: string}}){
                 </form>
 
                 <div className={styles.divBtn}>
-                    <Link href={''} className={styles.btn}>Entrar</Link>
+                    <button 
+                        type="button" 
+                        className={styles.btn}
+                        onClick={login}
+                    >Entrar</button>
+
                     <Link href={'/accountType'} className={styles.btn}>Voltar</Link>
                 </div>
 
